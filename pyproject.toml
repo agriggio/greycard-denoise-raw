@@ -1,0 +1,20 @@
+[project]
+name = "greycard-denoise-raw"
+version = "0.0.1"
+description = "Raw to linear float32 TIFF/DNG with greycard's AI denoiser"
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+dependencies = ["numpy", "rawpy", "onnxruntime", "tifffile"]
+
+[project.optional-dependencies]
+torch = ["torch", "onnx", "onnx2torch"]
+cuda = ["onnxruntime-gpu"]
+
+[project.scripts]
+greycard-denoise-raw = "greycard_denoise_raw:main"
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 80
